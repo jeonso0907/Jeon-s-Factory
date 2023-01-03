@@ -16,19 +16,19 @@ export default function Sidebar() {
 
     return (
         <div id="mySidebar" className={styles.sidebar} onMouseOver={toggleSidebar} onMouseOut={toggleSidebar}>
-            <a href="#">
+            <a href="/">
                 <span>
                     <i className="material-icons">home</i>
                     <span id="iconText" className="icon-text">Jeon's Factory</span>
                 </span>
             </a>
-            <a href="#">
+            <a href="/game">
                 <span>
                     <i className="material-icons">sports_esports</i>
                     <span id="iconText" className="icon-text">Game Directory</span>
                 </span>
             </a>
-            <a href="#">
+            <a href="/music">
                 <span>
                     <i className="material-icons">headphones</i>
                     <span id="iconText" className="icon-text">Music Library</span>
