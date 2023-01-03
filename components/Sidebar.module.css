@@ -31,7 +31,8 @@
 
 .sidebar div {
     padding-left: 15px;
-    padding-top: 5px;
+    padding-top: 2px;
+    font-size: 30px;
 }
 
 .sidebar img {
@@ -53,6 +54,6 @@
     }
 
     .sidebar a {
-        font-size: 5px;
+        font-size: 50px;
     }
 }

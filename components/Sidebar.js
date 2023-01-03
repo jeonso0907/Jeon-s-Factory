@@ -33,26 +33,34 @@ export default function Sidebar() {
     }
 
     function sidebarButton() {
-        if (document.getElementById("mySidebar").offsetWidth == 250) {
+        if (document.getElementById("mySidebar").offsetWidth === 250) {
             document.getElementById("mySidebar").style.width = "50px";
+            iconTextDisplay(false)
         } else {
             document.getElementById("mySidebar").style.width = "250px";
+            setTimeout(iconTextDisplay(true), 10000)
         }
-        
+
     }
 
     function getIconData(iconId) {
         for (const icon in Icons) {
-            if (Icons[icon].id == iconId) {
+            if (Icons[icon].id === iconId) {
                 return Icons[icon]
             }
         }
     }
 
-    function iconHoverTextDisplay() {
+    function iconTextDisplay(isDisplay) {
+        let display = "none"
+        if (isDisplay) {
+            display = "flex"
+        }
         for (const icon in Icons) {
-            const text = document.getElementById(Icons[icon].textId)
-            text.style.display = none   
+            if (Icons[icon].id !== "menuIcon") {
+                const text = document.getElementById(Icons[icon].textId)
+                text.style.display = display
+            }
         }
     }
 
@@ -65,15 +73,11 @@ export default function Sidebar() {
             img.src = icon.hover
             if (iconId != "menuIcon") {
                 text.style.color = "white"
-            } else {
-                iconHoverTextDisplay()
             }
         } else {
             img.src = icon.original
             if (iconId != "menuIcon") {
                 text.style.color = "#818181"
-            } else {
-                iconHoverTextDisplay()
             }
         }
     }
@@ -81,11 +85,10 @@ export default function Sidebar() {
     return (
         <div id="mySidebar" className={styles.sidebar}>
             <a href="javascript:void(0)" onClick={sidebarButton}>
-                <img id="menuIcon" src="/menuIcon.png" onMouseOver={e => iconHover(e, "menuIcon")} onMouseOut={e => iconHover(e, "menuIcon")} />
+                <img id="menuIcon" src="/menuIcon.png" onClick={sidebarButton} onMouseOver={e => iconHover(e, "menuIcon")} onMouseOut={e => iconHover(e, "menuIcon")} />
             </a>
             <a href="#" onMouseOver={e => iconHover(e, "homeIcon")} onMouseOut={e => iconHover(e, "homeIcon")}> 
-                <img id="homeIcon" src="/homeIcon.png" /> 
-
+                <img id="homeIcon" src="/homeIcon.png" />
                 <div id="homeTitle">Jeon's Factory</div>
             </a>
             <a href="#" onMouseOver={e => iconHover(e, "gameIcon")} onMouseOut={e => iconHover(e, "gameIcon")}> 
