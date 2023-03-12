@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 120vh;
+    height: 100vh;
+}
+
+.leftBox {
+    border-radius: 20px;
+    background-color: #D4D4D4;
+    margin-left: 50px;
+    width: 60vh;
+    height: 600px;
+}
+
+.rightBoxContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+    margin-left: 25px;
+}
+
+.rightBoxContainer div+div {
+    margin-top: 20px;
+}
+
+.rightBox {
+    flex-grow: 1;
+    border-radius: 20px;
+    background-color: #D4D4D4;
+    width: 300px;
+}
+
