@@ -1,18 +1,17 @@
-import {auth, getCurrAuth, login, logout} from '@components/firebaseAuth'
-import {signInWithEmailAndPassword} from "firebase/auth";
-import {log} from "debug";
-import * as authService from "@components/firebaseAuth";
+import * as authService from "../firebase/firebaseClient";
+import { useRouter } from "next/router";
 
 export default function Login() {
+    const router = useRouter();
 
-    function onLogin() {
-        authService.login()
+    async function onLogin() {
+        await authService.login();
+        await router.push("/profile");
     }
 
     return (
         <div>
             <button onClick={onLogin}>login</button>
-            <a href="./profile">prof</a>
         </div>
-    )
+    );
 }

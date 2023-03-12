@@ -1,7 +1,6 @@
-
 .sidebar {
     height: 100%;
-    width: 85px;
+    width: 60px;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,11 +8,16 @@
     padding-top: 60px;
     white-space: nowrap;
     overflow-x: hidden;
-    transition: 0.4s;
+    transition: width 0.4s;
+    z-index: 1;
+}
+
+.sidebar:hover {
+    width: 250px;
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 20px;
     text-decoration: none;
     font-size: 24px;
     color: #818181;
@@ -22,14 +26,6 @@
 
 .sidebar a:hover {
     color: #f1f1f1;
-}
-
-main .sidebar{
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
 }
 
 .sidebar i,
@@ -41,17 +37,18 @@ main .sidebar{
     margin-right: 35px;
 }
 
-#main {
-    transition: margin-left 0.5s;
-    padding: 16px;
-    margin-left: 250px;
+.sidebar a span {
+    display: none;
 }
 
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
+@media screen and (min-width: 768px) {
+    .sidebar a span {
+        display: inline-block;
     }
-    .sidebar a {
-        font-size: 18px;
+    .sidebar:hover a span {
+        display: inline-block;
+    }
+    .sidebar i {
+        margin-right: 15px;
     }
 }
