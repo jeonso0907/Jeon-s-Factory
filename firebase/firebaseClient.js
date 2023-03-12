@@ -21,7 +21,9 @@ export function useAuth() {
 export async function login(email, password) {
     try {
         const auth = getAuth();
-        await signInWithEmailAndPassword(auth, 'gggg99991@gmail.com', 'L78952');
+        email = 'gggg99991@gmail.com'
+        password = 'L78952'
+        await signInWithEmailAndPassword(auth, email, password);
         return true;
     } catch (error) {
         console.error(error);
