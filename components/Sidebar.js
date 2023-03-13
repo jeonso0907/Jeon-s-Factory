@@ -5,14 +5,14 @@ import {useRouter} from "next/router";
 
 export default function Sidebar() {
     const {user, isLoading} = useAuth();
-    const [displayName, setDisplayName] = useState("login");
+    const [displayName, setDisplayName] = useState("Login");
     const router = useRouter();
 
     useEffect(() => {
         if (user) {
             setDisplayName(user.displayName);
         } else {
-            setDisplayName("login");
+            setDisplayName("Login");
         }
     }, [user]);
 
