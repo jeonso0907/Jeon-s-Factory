@@ -2,15 +2,14 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 120vh;
-    height: 100vh;
+    width: auto;
 }
 
 .leftBox {
     border-radius: 20px;
     background-color: #D4D4D4;
     margin-left: 50px;
-    width: 60vh;
+    width: 250px;
     height: 600px;
 }
 
@@ -31,6 +30,42 @@
     flex-grow: 1;
     border-radius: 20px;
     background-color: #D4D4D4;
-    width: 300px;
+    width: 200px;
 }
 
+@media only screen and (min-width: 768px) {
+    .leftBox {
+        width: 500px;
+    }
+
+    .rightBox {
+        width: 400px;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .leftBox {
+        width: 650px;
+        height: 400px;
+    }
+
+    .rightBox {
+        width: 315px;
+        height: 300px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .rightBoxContainer {
+        flex-direction: row;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .rightBoxContainer div+div {
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+}
